@@ -14,21 +14,73 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-# Custom CSS for better styling
+# Custom CSS for better styling - optimized for tablets/iPads
 st.markdown("""
 <style>
+    /* Reduce overall font sizes for better tablet/iPad viewing */
+    html, body, [class*="css"] {
+        font-size: 14px !important;
+    }
+
     .main-header {
-        font-size: 2.5rem;
+        font-size: 1.8rem !important;
         font-weight: bold;
         color: #1f77b4;
         text-align: center;
-        margin-bottom: 1rem;
+        margin-bottom: 0.5rem;
     }
+
     .metric-card {
         background-color: #f0f2f6;
-        padding: 1rem;
+        padding: 0.75rem;
         border-radius: 0.5rem;
         margin: 0.5rem 0;
+    }
+
+    /* Make headings smaller */
+    h1 { font-size: 1.6rem !important; }
+    h2 { font-size: 1.3rem !important; }
+    h3 { font-size: 1.1rem !important; }
+
+    /* Reduce spacing */
+    .block-container {
+        padding-top: 2rem !important;
+        padding-bottom: 1rem !important;
+    }
+
+    /* Make metrics more compact */
+    [data-testid="stMetricValue"] {
+        font-size: 1.2rem !important;
+    }
+
+    [data-testid="stMetricLabel"] {
+        font-size: 0.85rem !important;
+    }
+
+    /* Reduce caption size */
+    .caption, .stCaption {
+        font-size: 0.75rem !important;
+    }
+
+    /* Make buttons and inputs smaller */
+    .stButton button {
+        font-size: 0.85rem !important;
+        padding: 0.4rem 0.8rem !important;
+    }
+
+    .stSelectbox label, .stNumberInput label, .stMultiSelect label {
+        font-size: 0.85rem !important;
+    }
+
+    /* Reduce tab font size */
+    .stTabs [data-baseweb="tab"] {
+        font-size: 0.9rem !important;
+        padding: 0.5rem 1rem !important;
+    }
+
+    /* Make expanders more compact */
+    .streamlit-expanderHeader {
+        font-size: 0.9rem !important;
     }
 </style>
 """, unsafe_allow_html=True)
