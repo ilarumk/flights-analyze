@@ -6,6 +6,14 @@ import plotly.graph_objects as go
 from datetime import datetime
 import numpy as np
 
+# Import weather service
+try:
+    from weather_service import get_monthly_climate
+    WEATHER_API_AVAILABLE = True
+except ImportError:
+    WEATHER_API_AVAILABLE = False
+    print("Weather service not available - using static data only")
+
 # Page configuration
 st.set_page_config(
     page_title="Flight Prices Explorer",
@@ -619,16 +627,34 @@ try:
                             temp_info = ""
                             if dest_airport in airport_to_dest:
                                 dest_data = airport_to_dest[dest_airport]
+
+                                # Try static data first
                                 if 'climate' in dest_data and 'monthly_temps' in dest_data['climate']:
-                                    # Get month from travel date
                                     travel_month = row['travel_date'].strftime('%b')
                                     month_temps = dest_data['climate']['monthly_temps'].get(travel_month, {})
                                     if month_temps:
                                         avg_temp = month_temps['avg']
                                         temp_desc = month_temps['desc']
-                                        # Convert to Fahrenheit for US audiences
                                         temp_f = int(avg_temp * 9/5 + 32)
                                         temp_info = f" ({avg_temp}°C/{temp_f}°F - {temp_desc})"
+
+                                # Fallback to Open-Meteo API if static data not available
+                                elif WEATHER_API_AVAILABLE and 'coordinates' in dest_data:
+                                    try:
+                                        coords = dest_data['coordinates']
+                                        travel_month_num = row['travel_date'].month
+                                        climate_data = get_monthly_climate(
+                                            coords['latitude'],
+                                            coords['longitude'],
+                                            travel_month_num
+                                        )
+                                        if climate_data:
+                                            avg_temp = climate_data['avg']
+                                            temp_desc = climate_data['desc']
+                                            temp_f = int(avg_temp * 9/5 + 32)
+                                            temp_info = f" ({avg_temp}°C/{temp_f}°F - {temp_desc})"
+                                    except Exception as e:
+                                        pass  # Silently fail if API unavailable
 
                             season_parts.append(f"🎯 {dest_loc}: {row['dest_season']}{temp_info}")
 
