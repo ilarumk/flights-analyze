@@ -336,7 +336,7 @@ try:
 
         # Row 3: Advanced Filters
         st.markdown("**Advanced Filters**")
-        adv_col1, adv_col2, adv_col3, adv_col4 = st.columns(4)
+        adv_col1, adv_col2, adv_col3, adv_col4, adv_col5 = st.columns(5)
 
         with adv_col1:
             planner_stops = st.selectbox(
@@ -353,16 +353,24 @@ try:
             )
 
         with adv_col3:
-            planner_dest_season = st.selectbox(
-                "🌤️ Destination Season",
+            planner_origin_season = st.selectbox(
+                "🌤️ Travel During (Origin)",
                 options=['All Seasons', 'Summer ☀️', 'Winter ❄️', 'Spring 🌸', 'Fall 🍂'],
-                key="planner_season",
-                help="What season/weather you want at your destination"
+                key="planner_origin_season",
+                help="When you want to travel from home (e.g., during summer vacation)"
             )
 
         with adv_col4:
+            planner_dest_season = st.selectbox(
+                "🌡️ Destination Weather",
+                options=['All Seasons', 'Summer ☀️', 'Winter ❄️', 'Spring 🌸', 'Fall 🍂'],
+                key="planner_dest_season",
+                help="What weather you want at your destination"
+            )
+
+        with adv_col5:
             planner_school_region = st.selectbox(
-                "📚 School Calendar (Origin)",
+                "📚 School Calendar",
                 options=['All Periods',
                          'US/Canada: School Days', 'US/Canada: Summer Break', 'US/Canada: Winter Break', 'US/Canada: Spring Break',
                          'Australia: School Days', 'Australia: Summer Break (Dec-Jan)', 'Australia: Winter Break (Jun-Jul)',
@@ -412,9 +420,9 @@ try:
             elif planner_travel_period == 'After 6 Months':
                 planner_df = planner_df[planner_df['travel_date'] > today + pd.Timedelta(days=180)]
 
-        # Calculate destination season for all results (considering hemisphere)
-        def get_destination_season(date, country):
-            """Get season at destination based on hemisphere"""
+        # Calculate seasons for both origin and destination (considering hemisphere)
+        def get_season(date, country):
+            """Get season at location based on hemisphere"""
             month = date.month
 
             # Southern Hemisphere countries (opposite seasons)
@@ -444,11 +452,22 @@ try:
                 else:
                     return "Fall 🍂"
 
-        if enriched and 'dest_country' in planner_df.columns:
+        if enriched and 'dest_country' in planner_df.columns and 'origin_country' in planner_df.columns:
+            # Calculate destination season
             planner_df['dest_season'] = planner_df.apply(
-                lambda row: get_destination_season(row['travel_date'], row.get('dest_country')),
+                lambda row: get_season(row['travel_date'], row.get('dest_country')),
                 axis=1
             )
+
+            # Calculate origin season
+            planner_df['origin_season'] = planner_df.apply(
+                lambda row: get_season(row['travel_date'], row.get('origin_country')),
+                axis=1
+            )
+
+            # Filter by origin season if specified
+            if planner_origin_season != 'All Seasons':
+                planner_df = planner_df[planner_df['origin_season'] == planner_origin_season]
 
             # Filter by destination season if specified
             if planner_dest_season != 'All Seasons':
@@ -579,9 +598,14 @@ try:
                         st.markdown(f"**✈️ Airlines:** {airlines_display}")
                         st.markdown(f"**🎫 Cabin:** {row['cabin_class'].title()} | **💰 Level:** {row['price_level'].title()}")
 
-                        # Show destination season if available
+                        # Show seasons if available
+                        season_info = []
+                        if 'origin_season' in row and row['origin_season']:
+                            season_info.append(f"Travel during: {row['origin_season']} at {row.get('origin_city', 'home')}")
                         if 'dest_season' in row and row['dest_season']:
-                            st.markdown(f"**🌤️ Destination:** {row['dest_season']}")
+                            season_info.append(f"Weather: {row['dest_season']} at destination")
+                        if season_info:
+                            st.markdown(f"**🌤️ {' | '.join(season_info)}**")
 
                     # Show family pricing summary if applicable
                     if total_travelers > 1:
