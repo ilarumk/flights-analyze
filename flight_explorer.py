@@ -85,7 +85,7 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-@st.cache_data
+@st.cache_data(ttl=3600)  # Cache for 1 hour
 def load_data():
     """Load and preprocess flight data"""
     # Try to load enriched data first, fallback to regular data
@@ -93,10 +93,12 @@ def load_data():
         with open('flight_prices_worldwide_enriched.json', 'r') as f:
             data = json.load(f)
         enriched = True
+        st.sidebar.success("✅ Using enriched data with city names")
     except FileNotFoundError:
         with open('flight_prices_worldwide.json', 'r') as f:
             data = json.load(f)
         enriched = False
+        st.sidebar.warning("⚠️ Using basic data (no city names)")
 
     # Extract metadata
     metadata = data['metadata']
