@@ -1,0 +1,1986 @@
+{
+  "destinations": [
+    {
+      "id": "bali",
+      "name": "Bali",
+      "country": "Indonesia",
+      "airports": [
+        "DPS"
+      ],
+      "region": "Asia",
+      "categories": [
+        "beach",
+        "culture",
+        "adventure",
+        "wellness"
+      ],
+      "best_months": [
+        "Apr",
+        "May",
+        "Jun",
+        "Jul",
+        "Aug",
+        "Sep"
+      ],
+      "avoid_months": [
+        "Jan",
+        "Feb",
+        "Dec"
+      ],
+      "visa_requirements": {
+        "US": "30 days visa-free",
+        "AU": "30 days visa-free",
+        "UK": "30 days visa-free"
+      },
+      "budget_per_day": {
+        "budget": 50,
+        "moderate": 100,
+        "luxury": 300
+      },
+      "flight_estimate_usd": {
+        "from_us_west": 800,
+        "from_us_east": 1200,
+        "from_australia": 400,
+        "from_europe": 600
+      },
+      "highlights": [
+        "Ubud rice terraces",
+        "Beach clubs",
+        "Temples",
+        "Surfing",
+        "Yoga retreats"
+      ],
+      "good_for": [
+        "honeymoon",
+        "family",
+        "solo",
+        "adventure"
+      ],
+      "trip_duration_days": [
+        7,
+        10,
+        14
+      ],
+      "description": "Tropical paradise with stunning beaches, ancient temples, lush rice terraces, and vibrant culture. Perfect mix of relaxation and adventure.",
+      "coordinates": {
+        "latitude": -8.7481698989868,
+        "longitude": 115.16699981689
+      },
+      "timezone": "Asia/Makassar",
+      "timezone_offset": 8.0,
+      "climate": {
+        "climate_type": "Tropical",
+        "ski_suitable": false,
+        "monthly_temps": {
+          "Jan": {
+            "avg": 27,
+            "min": 24,
+            "max": 30,
+            "desc": "Hot & Rainy"
+          },
+          "Feb": {
+            "avg": 27,
+            "min": 24,
+            "max": 30,
+            "desc": "Hot & Rainy"
+          },
+          "Mar": {
+            "avg": 27,
+            "min": 24,
+            "max": 30,
+            "desc": "Hot"
+          },
+          "Apr": {
+            "avg": 27,
+            "min": 24,
+            "max": 30,
+            "desc": "Hot & Dry"
+          },
+          "May": {
+            "avg": 27,
+            "min": 24,
+            "max": 30,
+            "desc": "Hot & Dry"
+          },
+          "Jun": {
+            "avg": 26,
+            "min": 23,
+            "max": 29,
+            "desc": "Warm & Dry"
+          },
+          "Jul": {
+            "avg": 26,
+            "min": 23,
+            "max": 29,
+            "desc": "Warm & Dry"
+          },
+          "Aug": {
+            "avg": 26,
+            "min": 23,
+            "max": 29,
+            "desc": "Warm & Dry"
+          },
+          "Sep": {
+            "avg": 27,
+            "min": 24,
+            "max": 30,
+            "desc": "Warm & Dry"
+          },
+          "Oct": {
+            "avg": 27,
+            "min": 24,
+            "max": 31,
+            "desc": "Hot"
+          },
+          "Nov": {
+            "avg": 27,
+            "min": 24,
+            "max": 31,
+            "desc": "Hot"
+          },
+          "Dec": {
+            "avg": 27,
+            "min": 24,
+            "max": 30,
+            "desc": "Hot & Rainy"
+          }
+        }
+      }
+    },
+    {
+      "id": "tokyo",
+      "name": "Tokyo",
+      "country": "Japan",
+      "airports": [
+        "NRT",
+        "HND"
+      ],
+      "region": "Asia",
+      "categories": [
+        "culture",
+        "food",
+        "shopping",
+        "technology"
+      ],
+      "best_months": [
+        "Mar",
+        "Apr",
+        "Oct",
+        "Nov"
+      ],
+      "avoid_months": [
+        "Jul",
+        "Aug"
+      ],
+      "visa_requirements": {
+        "US": "90 days visa-free",
+        "AU": "90 days visa-free",
+        "UK": "90 days visa-free"
+      },
+      "budget_per_day": {
+        "budget": 80,
+        "moderate": 150,
+        "luxury": 400
+      },
+      "flight_estimate_usd": {
+        "from_us_west": 700,
+        "from_us_east": 1100,
+        "from_australia": 900,
+        "from_europe": 800
+      },
+      "highlights": [
+        "Cherry blossoms",
+        "Shibuya crossing",
+        "Temples & shrines",
+        "Sushi",
+        "Tech culture"
+      ],
+      "good_for": [
+        "couple",
+        "family",
+        "solo",
+        "food"
+      ],
+      "trip_duration_days": [
+        5,
+        7,
+        10
+      ],
+      "description": "Ultra-modern metropolis blending cutting-edge technology with ancient traditions. World-class food, shopping, and cultural experiences.",
+      "coordinates": {
+        "latitude": 35.7647018433,
+        "longitude": 140.386001587
+      },
+      "timezone": "Asia/Tokyo",
+      "timezone_offset": 9.0,
+      "climate": {
+        "climate_type": "Humid Subtropical",
+        "ski_suitable": false,
+        "monthly_temps": {
+          "Jan": {
+            "avg": 5,
+            "min": 1,
+            "max": 10,
+            "desc": "Cold & Dry"
+          },
+          "Feb": {
+            "avg": 6,
+            "min": 2,
+            "max": 10,
+            "desc": "Cold & Dry"
+          },
+          "Mar": {
+            "avg": 9,
+            "min": 5,
+            "max": 14,
+            "desc": "Cool"
+          },
+          "Apr": {
+            "avg": 14,
+            "min": 10,
+            "max": 19,
+            "desc": "Mild"
+          },
+          "May": {
+            "avg": 19,
+            "min": 15,
+            "max": 23,
+            "desc": "Pleasant"
+          },
+          "Jun": {
+            "avg": 22,
+            "min": 19,
+            "max": 26,
+            "desc": "Warm & Rainy"
+          },
+          "Jul": {
+            "avg": 26,
+            "min": 23,
+            "max": 29,
+            "desc": "Hot & Humid"
+          },
+          "Aug": {
+            "avg": 27,
+            "min": 24,
+            "max": 31,
+            "desc": "Hot & Humid"
+          },
+          "Sep": {
+            "avg": 23,
+            "min": 20,
+            "max": 27,
+            "desc": "Warm"
+          },
+          "Oct": {
+            "avg": 17,
+            "min": 14,
+            "max": 22,
+            "desc": "Pleasant"
+          },
+          "Nov": {
+            "avg": 12,
+            "min": 8,
+            "max": 17,
+            "desc": "Cool"
+          },
+          "Dec": {
+            "avg": 7,
+            "min": 3,
+            "max": 12,
+            "desc": "Cold"
+          }
+        }
+      }
+    },
+    {
+      "id": "paris",
+      "name": "Paris",
+      "country": "France",
+      "airports": [
+        "CDG",
+        "ORY"
+      ],
+      "region": "Europe",
+      "categories": [
+        "culture",
+        "romance",
+        "food",
+        "art"
+      ],
+      "best_months": [
+        "Apr",
+        "May",
+        "Jun",
+        "Sep",
+        "Oct"
+      ],
+      "avoid_months": [
+        "Jul",
+        "Aug"
+      ],
+      "visa_requirements": {
+        "US": "90 days visa-free",
+        "AU": "90 days visa-free",
+        "UK": "No visa required"
+      },
+      "budget_per_day": {
+        "budget": 100,
+        "moderate": 200,
+        "luxury": 500
+      },
+      "flight_estimate_usd": {
+        "from_us_west": 900,
+        "from_us_east": 600,
+        "from_australia": 1400,
+        "from_europe": 200
+      },
+      "highlights": [
+        "Eiffel Tower",
+        "Louvre Museum",
+        "Notre-Dame",
+        "Caf\u00e9s",
+        "Fashion"
+      ],
+      "good_for": [
+        "honeymoon",
+        "couple",
+        "solo",
+        "art"
+      ],
+      "trip_duration_days": [
+        4,
+        7,
+        10
+      ],
+      "description": "The City of Light captivates with iconic landmarks, world-class museums, romantic atmosphere, and exquisite cuisine.",
+      "coordinates": {
+        "latitude": 49.012798,
+        "longitude": 2.55
+      },
+      "timezone": "Europe/Paris",
+      "timezone_offset": 1.0,
+      "climate": {
+        "climate_type": "Oceanic",
+        "ski_suitable": false,
+        "monthly_temps": {
+          "Jan": {
+            "avg": 5,
+            "min": 2,
+            "max": 7,
+            "desc": "Cold & Damp"
+          },
+          "Feb": {
+            "avg": 6,
+            "min": 2,
+            "max": 8,
+            "desc": "Cold"
+          },
+          "Mar": {
+            "avg": 9,
+            "min": 5,
+            "max": 12,
+            "desc": "Cool"
+          },
+          "Apr": {
+            "avg": 12,
+            "min": 7,
+            "max": 16,
+            "desc": "Mild"
+          },
+          "May": {
+            "avg": 16,
+            "min": 11,
+            "max": 20,
+            "desc": "Pleasant"
+          },
+          "Jun": {
+            "avg": 19,
+            "min": 14,
+            "max": 23,
+            "desc": "Warm"
+          },
+          "Jul": {
+            "avg": 21,
+            "min": 16,
+            "max": 25,
+            "desc": "Warm"
+          },
+          "Aug": {
+            "avg": 21,
+            "min": 16,
+            "max": 25,
+            "desc": "Warm"
+          },
+          "Sep": {
+            "avg": 18,
+            "min": 13,
+            "max": 22,
+            "desc": "Pleasant"
+          },
+          "Oct": {
+            "avg": 14,
+            "min": 10,
+            "max": 17,
+            "desc": "Cool"
+          },
+          "Nov": {
+            "avg": 9,
+            "min": 6,
+            "max": 11,
+            "desc": "Cool"
+          },
+          "Dec": {
+            "avg": 6,
+            "min": 3,
+            "max": 8,
+            "desc": "Cold"
+          }
+        }
+      }
+    },
+    {
+      "id": "new-york",
+      "name": "New York City",
+      "country": "United States",
+      "airports": [
+        "JFK",
+        "EWR",
+        "LGA"
+      ],
+      "region": "North America",
+      "categories": [
+        "culture",
+        "shopping",
+        "food",
+        "entertainment"
+      ],
+      "best_months": [
+        "Apr",
+        "May",
+        "Jun",
+        "Sep",
+        "Oct",
+        "Nov"
+      ],
+      "avoid_months": [
+        "Jan",
+        "Feb"
+      ],
+      "visa_requirements": {
+        "US": "Domestic",
+        "AU": "ESTA required",
+        "UK": "ESTA required"
+      },
+      "budget_per_day": {
+        "budget": 120,
+        "moderate": 250,
+        "luxury": 600
+      },
+      "flight_estimate_usd": {
+        "from_us_west": 300,
+        "from_us_east": 200,
+        "from_australia": 1200,
+        "from_europe": 500
+      },
+      "highlights": [
+        "Statue of Liberty",
+        "Central Park",
+        "Broadway",
+        "Museums",
+        "Times Square"
+      ],
+      "good_for": [
+        "family",
+        "couple",
+        "solo",
+        "business"
+      ],
+      "trip_duration_days": [
+        4,
+        5,
+        7
+      ],
+      "description": "The city that never sleeps offers endless entertainment, world-class dining, iconic landmarks, and unmatched energy.",
+      "coordinates": {
+        "latitude": 40.63980103,
+        "longitude": -73.77890015
+      },
+      "timezone": "America/New_York",
+      "timezone_offset": -5.0
+    },
+    {
+      "id": "barcelona",
+      "name": "Barcelona",
+      "country": "Spain",
+      "airports": [
+        "BCN"
+      ],
+      "region": "Europe",
+      "categories": [
+        "beach",
+        "culture",
+        "food",
+        "architecture"
+      ],
+      "best_months": [
+        "May",
+        "Jun",
+        "Sep",
+        "Oct"
+      ],
+      "avoid_months": [
+        "Jul",
+        "Aug"
+      ],
+      "visa_requirements": {
+        "US": "90 days visa-free",
+        "AU": "90 days visa-free",
+        "UK": "No visa required"
+      },
+      "budget_per_day": {
+        "budget": 70,
+        "moderate": 140,
+        "luxury": 350
+      },
+      "flight_estimate_usd": {
+        "from_us_west": 800,
+        "from_us_east": 600,
+        "from_australia": 1400,
+        "from_europe": 150
+      },
+      "highlights": [
+        "Sagrada Familia",
+        "Park G\u00fcell",
+        "Las Ramblas",
+        "Beach",
+        "Tapas"
+      ],
+      "good_for": [
+        "family",
+        "couple",
+        "solo",
+        "architecture"
+      ],
+      "trip_duration_days": [
+        4,
+        7,
+        10
+      ],
+      "description": "Vibrant coastal city famous for Gaud\u00ed's architecture, Mediterranean beaches, world-class cuisine, and lively culture.",
+      "coordinates": {
+        "latitude": 41.2971,
+        "longitude": 2.07846
+      },
+      "timezone": "Europe/Madrid",
+      "timezone_offset": 1.0
+    },
+    {
+      "id": "dubai",
+      "name": "Dubai",
+      "country": "United Arab Emirates",
+      "airports": [
+        "DXB"
+      ],
+      "region": "Middle East",
+      "categories": [
+        "luxury",
+        "shopping",
+        "beach",
+        "adventure"
+      ],
+      "best_months": [
+        "Nov",
+        "Dec",
+        "Jan",
+        "Feb",
+        "Mar"
+      ],
+      "avoid_months": [
+        "Jun",
+        "Jul",
+        "Aug"
+      ],
+      "visa_requirements": {
+        "US": "Visa on arrival (30 days)",
+        "AU": "Visa on arrival (30 days)",
+        "UK": "Visa on arrival (30 days)"
+      },
+      "budget_per_day": {
+        "budget": 100,
+        "moderate": 250,
+        "luxury": 700
+      },
+      "flight_estimate_usd": {
+        "from_us_west": 900,
+        "from_us_east": 800,
+        "from_australia": 800,
+        "from_europe": 400
+      },
+      "highlights": [
+        "Burj Khalifa",
+        "Desert safari",
+        "Shopping malls",
+        "Beaches",
+        "Luxury hotels"
+      ],
+      "good_for": [
+        "family",
+        "luxury",
+        "shopping",
+        "honeymoon"
+      ],
+      "trip_duration_days": [
+        4,
+        5,
+        7
+      ],
+      "description": "Futuristic city of superlatives with record-breaking architecture, world-class shopping, pristine beaches, and desert adventures.",
+      "coordinates": {
+        "latitude": 25.2527999878,
+        "longitude": 55.3643989563
+      },
+      "timezone": "Asia/Dubai",
+      "timezone_offset": 4.0,
+      "climate": {
+        "climate_type": "Desert/Hot Arid",
+        "ski_suitable": false,
+        "monthly_temps": {
+          "Jan": {
+            "avg": 19,
+            "min": 14,
+            "max": 24,
+            "desc": "Pleasant"
+          },
+          "Feb": {
+            "avg": 20,
+            "min": 15,
+            "max": 25,
+            "desc": "Pleasant"
+          },
+          "Mar": {
+            "avg": 23,
+            "min": 17,
+            "max": 28,
+            "desc": "Warm"
+          },
+          "Apr": {
+            "avg": 26,
+            "min": 20,
+            "max": 33,
+            "desc": "Hot"
+          },
+          "May": {
+            "avg": 30,
+            "min": 25,
+            "max": 37,
+            "desc": "Very Hot"
+          },
+          "Jun": {
+            "avg": 33,
+            "min": 27,
+            "max": 39,
+            "desc": "Very Hot"
+          },
+          "Jul": {
+            "avg": 35,
+            "min": 30,
+            "max": 41,
+            "desc": "Extremely Hot"
+          },
+          "Aug": {
+            "avg": 35,
+            "min": 30,
+            "max": 41,
+            "desc": "Extremely Hot"
+          },
+          "Sep": {
+            "avg": 32,
+            "min": 27,
+            "max": 38,
+            "desc": "Very Hot"
+          },
+          "Oct": {
+            "avg": 28,
+            "min": 23,
+            "max": 35,
+            "desc": "Hot"
+          },
+          "Nov": {
+            "avg": 24,
+            "min": 19,
+            "max": 30,
+            "desc": "Warm"
+          },
+          "Dec": {
+            "avg": 21,
+            "min": 16,
+            "max": 26,
+            "desc": "Pleasant"
+          }
+        }
+      }
+    },
+    {
+      "id": "maldives",
+      "name": "Maldives",
+      "country": "Maldives",
+      "airports": [
+        "MLE"
+      ],
+      "region": "Asia",
+      "categories": [
+        "beach",
+        "luxury",
+        "honeymoon",
+        "wellness"
+      ],
+      "best_months": [
+        "Nov",
+        "Dec",
+        "Jan",
+        "Feb",
+        "Mar",
+        "Apr"
+      ],
+      "avoid_months": [
+        "May",
+        "Jun",
+        "Jul",
+        "Aug",
+        "Sep"
+      ],
+      "visa_requirements": {
+        "US": "30 days visa-free",
+        "AU": "30 days visa-free",
+        "UK": "30 days visa-free"
+      },
+      "budget_per_day": {
+        "budget": 200,
+        "moderate": 500,
+        "luxury": 1500
+      },
+      "flight_estimate_usd": {
+        "from_us_west": 1200,
+        "from_us_east": 1400,
+        "from_australia": 700,
+        "from_europe": 700
+      },
+      "highlights": [
+        "Overwater bungalows",
+        "Crystal-clear water",
+        "Diving",
+        "Spa",
+        "Private islands"
+      ],
+      "good_for": [
+        "honeymoon",
+        "luxury",
+        "couple",
+        "diving"
+      ],
+      "trip_duration_days": [
+        5,
+        7,
+        10
+      ],
+      "description": "Paradise of pristine white-sand beaches, turquoise lagoons, and luxury overwater resorts. Ultimate romantic escape.",
+      "coordinates": {
+        "latitude": 4.191830158233643,
+        "longitude": 73.52909851074219
+      },
+      "timezone": "Indian/Maldives",
+      "timezone_offset": 5.0,
+      "climate": {
+        "climate_type": "Tropical",
+        "ski_suitable": false,
+        "monthly_temps": {
+          "Jan": {
+            "avg": 28,
+            "min": 26,
+            "max": 30,
+            "desc": "Hot & Dry"
+          },
+          "Feb": {
+            "avg": 28,
+            "min": 26,
+            "max": 30,
+            "desc": "Hot & Dry"
+          },
+          "Mar": {
+            "avg": 29,
+            "min": 26,
+            "max": 31,
+            "desc": "Hot & Dry"
+          },
+          "Apr": {
+            "avg": 29,
+            "min": 27,
+            "max": 31,
+            "desc": "Hot"
+          },
+          "May": {
+            "avg": 28,
+            "min": 26,
+            "max": 31,
+            "desc": "Hot & Wet"
+          },
+          "Jun": {
+            "avg": 28,
+            "min": 26,
+            "max": 30,
+            "desc": "Hot & Wet"
+          },
+          "Jul": {
+            "avg": 28,
+            "min": 25,
+            "max": 30,
+            "desc": "Hot & Wet"
+          },
+          "Aug": {
+            "avg": 28,
+            "min": 25,
+            "max": 30,
+            "desc": "Hot & Wet"
+          },
+          "Sep": {
+            "avg": 28,
+            "min": 25,
+            "max": 30,
+            "desc": "Hot & Wet"
+          },
+          "Oct": {
+            "avg": 28,
+            "min": 25,
+            "max": 30,
+            "desc": "Hot"
+          },
+          "Nov": {
+            "avg": 28,
+            "min": 26,
+            "max": 30,
+            "desc": "Hot & Dry"
+          },
+          "Dec": {
+            "avg": 28,
+            "min": 26,
+            "max": 30,
+            "desc": "Hot & Dry"
+          }
+        }
+      }
+    },
+    {
+      "id": "sydney",
+      "name": "Sydney",
+      "country": "Australia",
+      "airports": [
+        "SYD"
+      ],
+      "region": "Oceania",
+      "categories": [
+        "beach",
+        "culture",
+        "food",
+        "adventure"
+      ],
+      "best_months": [
+        "Sep",
+        "Oct",
+        "Nov",
+        "Dec",
+        "Jan",
+        "Feb",
+        "Mar"
+      ],
+      "avoid_months": [
+        "Jun",
+        "Jul",
+        "Aug"
+      ],
+      "visa_requirements": {
+        "US": "eVisitor visa required",
+        "AU": "Domestic",
+        "UK": "eVisitor visa required"
+      },
+      "budget_per_day": {
+        "budget": 100,
+        "moderate": 200,
+        "luxury": 500
+      },
+      "flight_estimate_usd": {
+        "from_us_west": 1000,
+        "from_us_east": 1400,
+        "from_australia": 0,
+        "from_europe": 1200
+      },
+      "highlights": [
+        "Opera House",
+        "Harbour Bridge",
+        "Bondi Beach",
+        "Coastal walks",
+        "Food scene"
+      ],
+      "good_for": [
+        "family",
+        "couple",
+        "solo",
+        "beach"
+      ],
+      "trip_duration_days": [
+        5,
+        7,
+        10
+      ],
+      "description": "Stunning harbor city with iconic landmarks, world-famous beaches, vibrant dining scene, and outdoor adventures.",
+      "coordinates": {
+        "latitude": -33.94609832763672,
+        "longitude": 151.177001953125
+      },
+      "timezone": "Australia/Sydney",
+      "timezone_offset": 10.0,
+      "climate": {
+        "climate_type": "Humid Subtropical",
+        "ski_suitable": false,
+        "monthly_temps": {
+          "Jan": {
+            "avg": 23,
+            "min": 19,
+            "max": 27,
+            "desc": "Warm"
+          },
+          "Feb": {
+            "avg": 23,
+            "min": 19,
+            "max": 27,
+            "desc": "Warm"
+          },
+          "Mar": {
+            "avg": 21,
+            "min": 17,
+            "max": 25,
+            "desc": "Pleasant"
+          },
+          "Apr": {
+            "avg": 18,
+            "min": 14,
+            "max": 22,
+            "desc": "Mild"
+          },
+          "May": {
+            "avg": 15,
+            "min": 11,
+            "max": 19,
+            "desc": "Cool"
+          },
+          "Jun": {
+            "avg": 13,
+            "min": 9,
+            "max": 17,
+            "desc": "Cool"
+          },
+          "Jul": {
+            "avg": 12,
+            "min": 8,
+            "max": 17,
+            "desc": "Cool"
+          },
+          "Aug": {
+            "avg": 13,
+            "min": 9,
+            "max": 18,
+            "desc": "Cool"
+          },
+          "Sep": {
+            "avg": 16,
+            "min": 11,
+            "max": 20,
+            "desc": "Mild"
+          },
+          "Oct": {
+            "avg": 18,
+            "min": 14,
+            "max": 22,
+            "desc": "Pleasant"
+          },
+          "Nov": {
+            "avg": 20,
+            "min": 16,
+            "max": 24,
+            "desc": "Pleasant"
+          },
+          "Dec": {
+            "avg": 22,
+            "min": 18,
+            "max": 26,
+            "desc": "Warm"
+          }
+        }
+      }
+    },
+    {
+      "id": "santorini",
+      "name": "Santorini",
+      "country": "Greece",
+      "airports": [
+        "JTR"
+      ],
+      "region": "Europe",
+      "categories": [
+        "beach",
+        "romance",
+        "culture",
+        "luxury"
+      ],
+      "best_months": [
+        "Apr",
+        "May",
+        "Jun",
+        "Sep",
+        "Oct"
+      ],
+      "avoid_months": [
+        "Jul",
+        "Aug"
+      ],
+      "visa_requirements": {
+        "US": "90 days visa-free",
+        "AU": "90 days visa-free",
+        "UK": "No visa required"
+      },
+      "budget_per_day": {
+        "budget": 80,
+        "moderate": 180,
+        "luxury": 500
+      },
+      "flight_estimate_usd": {
+        "from_us_west": 1000,
+        "from_us_east": 800,
+        "from_australia": 1500,
+        "from_europe": 250
+      },
+      "highlights": [
+        "White-washed villages",
+        "Sunset in Oia",
+        "Volcanic beaches",
+        "Wine tasting",
+        "Caldera views"
+      ],
+      "good_for": [
+        "honeymoon",
+        "couple",
+        "romance",
+        "luxury"
+      ],
+      "trip_duration_days": [
+        4,
+        5,
+        7
+      ],
+      "description": "Breathtaking island with dramatic cliffs, whitewashed buildings, spectacular sunsets, and romantic atmosphere.",
+      "coordinates": {
+        "latitude": 36.399200439453125,
+        "longitude": 25.47929954528809
+      },
+      "timezone": "Europe/Athens",
+      "timezone_offset": 2.0
+    },
+    {
+      "id": "iceland",
+      "name": "Iceland",
+      "country": "Iceland",
+      "airports": [
+        "KEF"
+      ],
+      "region": "Europe",
+      "categories": [
+        "adventure",
+        "nature",
+        "culture"
+      ],
+      "best_months": [
+        "Jun",
+        "Jul",
+        "Aug",
+        "Sep"
+      ],
+      "avoid_months": [
+        "Nov",
+        "Dec",
+        "Jan",
+        "Feb"
+      ],
+      "visa_requirements": {
+        "US": "90 days visa-free",
+        "AU": "90 days visa-free",
+        "UK": "No visa required"
+      },
+      "budget_per_day": {
+        "budget": 120,
+        "moderate": 250,
+        "luxury": 500
+      },
+      "flight_estimate_usd": {
+        "from_us_west": 600,
+        "from_us_east": 400,
+        "from_australia": 1500,
+        "from_europe": 200
+      },
+      "highlights": [
+        "Northern Lights",
+        "Blue Lagoon",
+        "Waterfalls",
+        "Glaciers",
+        "Geothermal pools"
+      ],
+      "good_for": [
+        "adventure",
+        "nature",
+        "couple",
+        "photography"
+      ],
+      "trip_duration_days": [
+        7,
+        10,
+        14
+      ],
+      "description": "Land of fire and ice with stunning natural wonders, geothermal pools, waterfalls, glaciers, and Northern Lights.",
+      "coordinates": {
+        "latitude": 63.985000610352,
+        "longitude": -22.605600357056
+      },
+      "timezone": "Atlantic/Reykjavik",
+      "timezone_offset": 0.0,
+      "climate": {
+        "climate_type": "Subarctic",
+        "ski_suitable": true,
+        "monthly_temps": {
+          "Jan": {
+            "avg": -1,
+            "min": -3,
+            "max": 2,
+            "desc": "Very Cold"
+          },
+          "Feb": {
+            "avg": 0,
+            "min": -2,
+            "max": 3,
+            "desc": "Very Cold"
+          },
+          "Mar": {
+            "avg": 0,
+            "min": -2,
+            "max": 3,
+            "desc": "Cold"
+          },
+          "Apr": {
+            "avg": 3,
+            "min": 1,
+            "max": 6,
+            "desc": "Cold"
+          },
+          "May": {
+            "avg": 7,
+            "min": 4,
+            "max": 10,
+            "desc": "Cool"
+          },
+          "Jun": {
+            "avg": 10,
+            "min": 7,
+            "max": 13,
+            "desc": "Cool"
+          },
+          "Jul": {
+            "avg": 12,
+            "min": 9,
+            "max": 15,
+            "desc": "Mild"
+          },
+          "Aug": {
+            "avg": 11,
+            "min": 8,
+            "max": 14,
+            "desc": "Mild"
+          },
+          "Sep": {
+            "avg": 8,
+            "min": 5,
+            "max": 11,
+            "desc": "Cool"
+          },
+          "Oct": {
+            "avg": 4,
+            "min": 2,
+            "max": 7,
+            "desc": "Cold"
+          },
+          "Nov": {
+            "avg": 1,
+            "min": -1,
+            "max": 4,
+            "desc": "Very Cold"
+          },
+          "Dec": {
+            "avg": 0,
+            "min": -2,
+            "max": 3,
+            "desc": "Very Cold"
+          }
+        }
+      }
+    },
+    {
+      "id": "london",
+      "name": "London",
+      "country": "United Kingdom",
+      "airports": [
+        "LHR",
+        "LGW",
+        "STN"
+      ],
+      "region": "Europe",
+      "categories": [
+        "culture",
+        "history",
+        "shopping",
+        "food"
+      ],
+      "best_months": [
+        "May",
+        "Jun",
+        "Jul",
+        "Aug",
+        "Sep"
+      ],
+      "avoid_months": [
+        "Nov",
+        "Dec",
+        "Jan"
+      ],
+      "visa_requirements": {
+        "US": "6 months visa-free",
+        "AU": "6 months visa-free",
+        "UK": "Domestic"
+      },
+      "budget_per_day": {
+        "budget": 100,
+        "moderate": 200,
+        "luxury": 500
+      },
+      "flight_estimate_usd": {
+        "from_us_west": 800,
+        "from_us_east": 500,
+        "from_australia": 1300,
+        "from_europe": 150
+      },
+      "highlights": [
+        "Big Ben",
+        "British Museum",
+        "Tower Bridge",
+        "West End shows",
+        "Royal palaces"
+      ],
+      "good_for": [
+        "family",
+        "culture",
+        "solo",
+        "history"
+      ],
+      "trip_duration_days": [
+        4,
+        7,
+        10
+      ],
+      "description": "Historic capital blending royal heritage, world-class museums, iconic landmarks, vibrant theater scene, and diverse cuisine.",
+      "coordinates": {
+        "latitude": 51.4706,
+        "longitude": -0.461941
+      },
+      "timezone": "Europe/London",
+      "timezone_offset": 0.0
+    },
+    {
+      "id": "amsterdam",
+      "name": "Amsterdam",
+      "country": "Netherlands",
+      "airports": [
+        "AMS"
+      ],
+      "region": "Europe",
+      "categories": [
+        "culture",
+        "art",
+        "cycling",
+        "canal"
+      ],
+      "best_months": [
+        "Apr",
+        "May",
+        "Jun",
+        "Sep",
+        "Oct"
+      ],
+      "avoid_months": [
+        "Nov",
+        "Dec",
+        "Jan"
+      ],
+      "visa_requirements": {
+        "US": "90 days visa-free",
+        "AU": "90 days visa-free",
+        "UK": "No visa required"
+      },
+      "budget_per_day": {
+        "budget": 80,
+        "moderate": 160,
+        "luxury": 400
+      },
+      "flight_estimate_usd": {
+        "from_us_west": 750,
+        "from_us_east": 500,
+        "from_australia": 1400,
+        "from_europe": 150
+      },
+      "highlights": [
+        "Canal cruises",
+        "Van Gogh Museum",
+        "Anne Frank House",
+        "Cycling",
+        "Tulips"
+      ],
+      "good_for": [
+        "couple",
+        "solo",
+        "art",
+        "cycling"
+      ],
+      "trip_duration_days": [
+        3,
+        5,
+        7
+      ],
+      "description": "Charming canal city famous for art museums, historic architecture, cycling culture, and liberal atmosphere.",
+      "coordinates": {
+        "latitude": 52.308601,
+        "longitude": 4.76389
+      },
+      "timezone": "Europe/Amsterdam",
+      "timezone_offset": 1.0
+    },
+    {
+      "id": "bangkok",
+      "name": "Bangkok",
+      "country": "Thailand",
+      "airports": [
+        "BKK"
+      ],
+      "region": "Asia",
+      "categories": [
+        "food",
+        "culture",
+        "shopping",
+        "nightlife"
+      ],
+      "best_months": [
+        "Nov",
+        "Dec",
+        "Jan",
+        "Feb"
+      ],
+      "avoid_months": [
+        "Mar",
+        "Apr",
+        "May"
+      ],
+      "visa_requirements": {
+        "US": "30 days visa-free",
+        "AU": "30 days visa-free",
+        "UK": "30 days visa-free"
+      },
+      "budget_per_day": {
+        "budget": 40,
+        "moderate": 80,
+        "luxury": 250
+      },
+      "flight_estimate_usd": {
+        "from_us_west": 700,
+        "from_us_east": 1000,
+        "from_australia": 600,
+        "from_europe": 600
+      },
+      "highlights": [
+        "Grand Palace",
+        "Street food",
+        "Floating markets",
+        "Temples",
+        "Nightlife"
+      ],
+      "good_for": [
+        "solo",
+        "food",
+        "adventure",
+        "budget"
+      ],
+      "trip_duration_days": [
+        5,
+        7,
+        10
+      ],
+      "description": "Vibrant metropolis offering incredible street food, ornate temples, bustling markets, and energetic nightlife at budget-friendly prices.",
+      "coordinates": {
+        "latitude": 13.681099891662598,
+        "longitude": 100.74700164794922
+      },
+      "timezone": "Asia/Bangkok",
+      "timezone_offset": 7.0
+    },
+    {
+      "id": "singapore",
+      "name": "Singapore",
+      "country": "Singapore",
+      "airports": [
+        "SIN"
+      ],
+      "region": "Asia",
+      "categories": [
+        "food",
+        "culture",
+        "shopping",
+        "modern"
+      ],
+      "best_months": [
+        "Feb",
+        "Mar",
+        "Apr",
+        "Jul",
+        "Aug"
+      ],
+      "avoid_months": [
+        "Nov",
+        "Dec"
+      ],
+      "visa_requirements": {
+        "US": "90 days visa-free",
+        "AU": "90 days visa-free",
+        "UK": "90 days visa-free"
+      },
+      "budget_per_day": {
+        "budget": 80,
+        "moderate": 150,
+        "luxury": 400
+      },
+      "flight_estimate_usd": {
+        "from_us_west": 800,
+        "from_us_east": 1200,
+        "from_australia": 500,
+        "from_europe": 700
+      },
+      "highlights": [
+        "Marina Bay Sands",
+        "Gardens by the Bay",
+        "Hawker centers",
+        "Sentosa",
+        "Shopping"
+      ],
+      "good_for": [
+        "family",
+        "food",
+        "stopover",
+        "shopping"
+      ],
+      "trip_duration_days": [
+        3,
+        4,
+        5
+      ],
+      "description": "Ultra-modern city-state known for futuristic architecture, world-class hawker food, lush gardens, and efficient transit.",
+      "coordinates": {
+        "latitude": 1.35019,
+        "longitude": 103.994003
+      },
+      "timezone": "Asia/Singapore",
+      "timezone_offset": 8.0
+    },
+    {
+      "id": "hong-kong",
+      "name": "Hong Kong",
+      "country": "Hong Kong SAR",
+      "airports": [
+        "HKG"
+      ],
+      "region": "Asia",
+      "categories": [
+        "food",
+        "shopping",
+        "culture",
+        "skyline"
+      ],
+      "best_months": [
+        "Oct",
+        "Nov",
+        "Dec",
+        "Jan",
+        "Feb"
+      ],
+      "avoid_months": [
+        "Jun",
+        "Jul",
+        "Aug"
+      ],
+      "visa_requirements": {
+        "US": "90 days visa-free",
+        "AU": "90 days visa-free",
+        "UK": "180 days visa-free"
+      },
+      "budget_per_day": {
+        "budget": 70,
+        "moderate": 140,
+        "luxury": 350
+      },
+      "flight_estimate_usd": {
+        "from_us_west": 650,
+        "from_us_east": 900,
+        "from_australia": 600,
+        "from_europe": 700
+      },
+      "highlights": [
+        "Victoria Peak",
+        "Dim sum",
+        "Night markets",
+        "Skyline",
+        "Lantau Island"
+      ],
+      "good_for": [
+        "food",
+        "shopping",
+        "family",
+        "stopover"
+      ],
+      "trip_duration_days": [
+        4,
+        5,
+        7
+      ],
+      "description": "Dynamic fusion of East and West with stunning skyline, incredible dim sum, bustling markets, and vibrant street life.",
+      "coordinates": {
+        "latitude": 22.308901,
+        "longitude": 113.915001
+      },
+      "timezone": "Asia/Hong_Kong",
+      "timezone_offset": 8.0
+    },
+    {
+      "id": "rome",
+      "name": "Rome",
+      "country": "Italy",
+      "airports": [
+        "FCO"
+      ],
+      "region": "Europe",
+      "categories": [
+        "history",
+        "culture",
+        "food",
+        "art"
+      ],
+      "best_months": [
+        "Apr",
+        "May",
+        "Jun",
+        "Sep",
+        "Oct"
+      ],
+      "avoid_months": [
+        "Jul",
+        "Aug"
+      ],
+      "visa_requirements": {
+        "US": "90 days visa-free",
+        "AU": "90 days visa-free",
+        "UK": "No visa required"
+      },
+      "budget_per_day": {
+        "budget": 80,
+        "moderate": 150,
+        "luxury": 400
+      },
+      "flight_estimate_usd": {
+        "from_us_west": 850,
+        "from_us_east": 600,
+        "from_australia": 1400,
+        "from_europe": 150
+      },
+      "highlights": [
+        "Colosseum",
+        "Vatican",
+        "Trevi Fountain",
+        "Roman Forum",
+        "Pasta & gelato"
+      ],
+      "good_for": [
+        "history",
+        "couple",
+        "family",
+        "food"
+      ],
+      "trip_duration_days": [
+        4,
+        7,
+        10
+      ],
+      "description": "Eternal City packed with ancient ruins, Renaissance art, magnificent churches, and world-famous Italian cuisine.",
+      "coordinates": {
+        "latitude": 41.8002778,
+        "longitude": 12.2388889
+      },
+      "timezone": "Europe/Rome",
+      "timezone_offset": 1.0
+    },
+    {
+      "id": "athens",
+      "name": "Athens",
+      "country": "Greece",
+      "airports": [
+        "ATH"
+      ],
+      "region": "Europe",
+      "categories": [
+        "history",
+        "culture",
+        "food",
+        "archaeology"
+      ],
+      "best_months": [
+        "Apr",
+        "May",
+        "Jun",
+        "Sep",
+        "Oct"
+      ],
+      "avoid_months": [
+        "Jul",
+        "Aug"
+      ],
+      "visa_requirements": {
+        "US": "90 days visa-free",
+        "AU": "90 days visa-free",
+        "UK": "No visa required"
+      },
+      "budget_per_day": {
+        "budget": 60,
+        "moderate": 120,
+        "luxury": 300
+      },
+      "flight_estimate_usd": {
+        "from_us_west": 900,
+        "from_us_east": 700,
+        "from_australia": 1400,
+        "from_europe": 200
+      },
+      "highlights": [
+        "Acropolis",
+        "Parthenon",
+        "Ancient ruins",
+        "Greek cuisine",
+        "Plaka neighborhood"
+      ],
+      "good_for": [
+        "history",
+        "culture",
+        "couple",
+        "archaeology"
+      ],
+      "trip_duration_days": [
+        4,
+        5,
+        7
+      ],
+      "description": "Cradle of Western civilization featuring iconic ancient ruins, archaeological treasures, and authentic Greek hospitality.",
+      "coordinates": {
+        "latitude": 37.9364013672,
+        "longitude": 23.9444999695
+      },
+      "timezone": "Europe/Athens",
+      "timezone_offset": 2.0
+    },
+    {
+      "id": "istanbul",
+      "name": "Istanbul",
+      "country": "Turkey",
+      "airports": [
+        "IST"
+      ],
+      "region": "Europe",
+      "categories": [
+        "history",
+        "culture",
+        "food",
+        "bazaar"
+      ],
+      "best_months": [
+        "Apr",
+        "May",
+        "Jun",
+        "Sep",
+        "Oct"
+      ],
+      "avoid_months": [
+        "Jul",
+        "Aug"
+      ],
+      "visa_requirements": {
+        "US": "e-Visa required",
+        "AU": "e-Visa required",
+        "UK": "e-Visa required"
+      },
+      "budget_per_day": {
+        "budget": 50,
+        "moderate": 100,
+        "luxury": 250
+      },
+      "flight_estimate_usd": {
+        "from_us_west": 850,
+        "from_us_east": 650,
+        "from_australia": 1200,
+        "from_europe": 250
+      },
+      "highlights": [
+        "Hagia Sophia",
+        "Blue Mosque",
+        "Grand Bazaar",
+        "Bosphorus",
+        "Turkish cuisine"
+      ],
+      "good_for": [
+        "history",
+        "culture",
+        "food",
+        "shopping"
+      ],
+      "trip_duration_days": [
+        5,
+        7,
+        10
+      ],
+      "description": "Transcontinental city bridging Europe and Asia with Byzantine and Ottoman heritage, vibrant bazaars, and rich cuisine.",
+      "coordinates": {
+        "latitude": 41.275278,
+        "longitude": 28.751944
+      },
+      "timezone": "",
+      "timezone_offset": 3.0
+    },
+    {
+      "id": "cancun",
+      "name": "Cancun",
+      "country": "Mexico",
+      "airports": [
+        "CUN"
+      ],
+      "region": "North America",
+      "categories": [
+        "beach",
+        "resort",
+        "nightlife",
+        "diving"
+      ],
+      "best_months": [
+        "Dec",
+        "Jan",
+        "Feb",
+        "Mar",
+        "Apr"
+      ],
+      "avoid_months": [
+        "Sep",
+        "Oct"
+      ],
+      "visa_requirements": {
+        "US": "Tourist card (free)",
+        "AU": "No visa required",
+        "UK": "No visa required"
+      },
+      "budget_per_day": {
+        "budget": 70,
+        "moderate": 140,
+        "luxury": 350
+      },
+      "flight_estimate_usd": {
+        "from_us_west": 400,
+        "from_us_east": 300,
+        "from_australia": 1400,
+        "from_europe": 700
+      },
+      "highlights": [
+        "White beaches",
+        "Mayan ruins",
+        "Cenotes",
+        "All-inclusive resorts",
+        "Nightlife"
+      ],
+      "good_for": [
+        "beach",
+        "family",
+        "honeymoon",
+        "party"
+      ],
+      "trip_duration_days": [
+        5,
+        7,
+        10
+      ],
+      "description": "Caribbean paradise with pristine beaches, crystal-clear waters, ancient Mayan ruins, and vibrant resort atmosphere.",
+      "coordinates": {
+        "latitude": 21.036500930800003,
+        "longitude": -86.8770980835
+      },
+      "timezone": "America/Cancun",
+      "timezone_offset": -5.0,
+      "climate": {
+        "climate_type": "Tropical Savanna",
+        "ski_suitable": false,
+        "monthly_temps": {
+          "Jan": {
+            "avg": 24,
+            "min": 20,
+            "max": 28,
+            "desc": "Warm & Dry"
+          },
+          "Feb": {
+            "avg": 25,
+            "min": 21,
+            "max": 29,
+            "desc": "Warm & Dry"
+          },
+          "Mar": {
+            "avg": 26,
+            "min": 22,
+            "max": 30,
+            "desc": "Hot & Dry"
+          },
+          "Apr": {
+            "avg": 28,
+            "min": 24,
+            "max": 32,
+            "desc": "Hot & Dry"
+          },
+          "May": {
+            "avg": 29,
+            "min": 25,
+            "max": 33,
+            "desc": "Hot"
+          },
+          "Jun": {
+            "avg": 29,
+            "min": 26,
+            "max": 33,
+            "desc": "Hot & Humid"
+          },
+          "Jul": {
+            "avg": 29,
+            "min": 25,
+            "max": 33,
+            "desc": "Hot & Humid"
+          },
+          "Aug": {
+            "avg": 29,
+            "min": 25,
+            "max": 33,
+            "desc": "Hot & Humid"
+          },
+          "Sep": {
+            "avg": 29,
+            "min": 25,
+            "max": 32,
+            "desc": "Hot & Rainy"
+          },
+          "Oct": {
+            "avg": 27,
+            "min": 24,
+            "max": 31,
+            "desc": "Hot & Rainy"
+          },
+          "Nov": {
+            "avg": 26,
+            "min": 22,
+            "max": 29,
+            "desc": "Warm"
+          },
+          "Dec": {
+            "avg": 25,
+            "min": 21,
+            "max": 28,
+            "desc": "Warm"
+          }
+        }
+      }
+    },
+    {
+      "id": "honolulu",
+      "name": "Honolulu",
+      "country": "United States",
+      "airports": [
+        "HNL"
+      ],
+      "region": "North America",
+      "categories": [
+        "beach",
+        "surfing",
+        "nature",
+        "culture"
+      ],
+      "best_months": [
+        "Apr",
+        "May",
+        "Sep",
+        "Oct",
+        "Nov"
+      ],
+      "avoid_months": [
+        "Dec",
+        "Jan"
+      ],
+      "visa_requirements": {
+        "US": "Domestic",
+        "AU": "ESTA required",
+        "UK": "ESTA required"
+      },
+      "budget_per_day": {
+        "budget": 120,
+        "moderate": 250,
+        "luxury": 600
+      },
+      "flight_estimate_usd": {
+        "from_us_west": 400,
+        "from_us_east": 700,
+        "from_australia": 900,
+        "from_europe": 1000
+      },
+      "highlights": [
+        "Waikiki Beach",
+        "Diamond Head",
+        "Pearl Harbor",
+        "Surfing",
+        "Luaus"
+      ],
+      "good_for": [
+        "beach",
+        "family",
+        "honeymoon",
+        "surfing"
+      ],
+      "trip_duration_days": [
+        7,
+        10,
+        14
+      ],
+      "description": "Tropical island paradise with world-famous beaches, perfect waves, volcanic landscapes, and aloha spirit.",
+      "coordinates": {
+        "latitude": 21.32062,
+        "longitude": -157.924228
+      },
+      "timezone": "Pacific/Honolulu",
+      "timezone_offset": -10.0
+    }
+  ]
+}

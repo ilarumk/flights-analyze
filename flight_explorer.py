@@ -110,16 +110,22 @@ def load_data():
     df['travel_date'] = pd.to_datetime(df['travel_date'])
     df['scraped_at'] = pd.to_datetime(df['scraped_at'])
 
-    # Load destination metadata
+    # Load destination metadata with climate data if available
     try:
-        with open('destinations.json', 'r') as f:
-            dest_data = json.load(f)
-            destinations_dict = {d['id']: d for d in dest_data['destinations']}
-            # Create airport to destination mapping
-            airport_to_dest = {}
-            for dest in dest_data['destinations']:
-                for airport in dest['airports']:
-                    airport_to_dest[airport] = dest
+        # Try climate-enriched version first
+        try:
+            with open('destinations_with_climate.json', 'r') as f:
+                dest_data = json.load(f)
+        except FileNotFoundError:
+            with open('destinations.json', 'r') as f:
+                dest_data = json.load(f)
+
+        destinations_dict = {d['id']: d for d in dest_data['destinations']}
+        # Create airport to destination mapping
+        airport_to_dest = {}
+        for dest in dest_data['destinations']:
+            for airport in dest['airports']:
+                airport_to_dest[airport] = dest
     except FileNotFoundError:
         destinations_dict = {}
         airport_to_dest = {}
@@ -600,14 +606,34 @@ try:
                         st.markdown(f"**✈️ Airlines:** {airlines_display}")
                         st.markdown(f"**🎫 Cabin:** {row['cabin_class'].title()} | **💰 Level:** {row['price_level'].title()}")
 
-                        # Show seasons if available
-                        season_info = []
+                        # Show seasons and temperature with clear location context
+                        season_parts = []
                         if 'origin_season' in row and row['origin_season']:
-                            season_info.append(f"Travel during: {row['origin_season']} at {row.get('origin_city', 'home')}")
+                            origin_loc = row.get('origin_city', 'Origin')
+                            season_parts.append(f"🏠 {origin_loc}: {row['origin_season']}")
                         if 'dest_season' in row and row['dest_season']:
-                            season_info.append(f"Weather: {row['dest_season']} at destination")
-                        if season_info:
-                            st.markdown(f"**🌤️ {' | '.join(season_info)}**")
+                            dest_loc = row.get('dest_city', 'Destination')
+                            dest_airport = row.get('destination')
+
+                            # Try to get temperature info for destination
+                            temp_info = ""
+                            if dest_airport in airport_to_dest:
+                                dest_data = airport_to_dest[dest_airport]
+                                if 'climate' in dest_data and 'monthly_temps' in dest_data['climate']:
+                                    # Get month from travel date
+                                    travel_month = row['travel_date'].strftime('%b')
+                                    month_temps = dest_data['climate']['monthly_temps'].get(travel_month, {})
+                                    if month_temps:
+                                        avg_temp = month_temps['avg']
+                                        temp_desc = month_temps['desc']
+                                        # Convert to Fahrenheit for US audiences
+                                        temp_f = int(avg_temp * 9/5 + 32)
+                                        temp_info = f" ({avg_temp}°C/{temp_f}°F - {temp_desc})"
+
+                            season_parts.append(f"🎯 {dest_loc}: {row['dest_season']}{temp_info}")
+
+                        if season_parts:
+                            st.markdown(f"**🌤️ Climate:** {' → '.join(season_parts)}")
 
                     # Show family pricing summary if applicable
                     if total_travelers > 1:
