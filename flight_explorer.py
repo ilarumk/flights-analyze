@@ -253,8 +253,9 @@ try:
 
     # Main content tabs
     if enriched:
-        tab1, tab2, tab3, tab4, tab5, tab6, tab7, tab8 = st.tabs([
+        tab1, tab2, tab3, tab4, tab5, tab6, tab7, tab8, tab9 = st.tabs([
             "🎯 Trip Planner",
+            "🤖 AI Assistant",
             "💵 Deals",
             "💎 Insights & Value",
             "📈 Price Analysis",
@@ -264,8 +265,9 @@ try:
             "📋 Data Table"
         ])
     else:
-        tab1, tab2, tab3, tab4, tab5, tab6, tab7 = st.tabs([
+        tab1, tab2, tab3, tab4, tab5, tab6, tab7, tab8 = st.tabs([
             "🎯 Trip Planner",
+            "🤖 AI Assistant",
             "💵 Deals",
             "📈 Price Analysis",
             "🗺️ Route Explorer",
@@ -1202,8 +1204,126 @@ try:
             st.warning(f"😔 No routes found from {planner_origin} within ${planner_budget} budget for {planner_cabin} class.")
             st.info("💡 Try increasing your budget or selecting a different origin airport.")
 
-    # Tab 2: Deals
+    # Tab 2: AI Assistant
     with tab2:
+        st.header("🤖 AI Trip Assistant")
+        st.markdown("Chat naturally about your travel plans - I'll search real flights for you!")
+
+        # Initialize AI agent
+        if 'ai_agent' not in st.session_state:
+            try:
+                from gemini_tool_calling import GeminiToolCallingAgent
+                st.session_state.ai_agent = GeminiToolCallingAgent(filtered_df, airport_to_dest)
+                st.session_state.ai_ready = True
+            except Exception as e:
+                st.session_state.ai_ready = False
+                st.error(f"""
+                ⚠️ **AI Assistant not available:** {str(e)}
+
+                **To enable:**
+                1. Add `GEMINI_API_KEY` to `.streamlit/secrets.toml`
+                2. See `SECRETS_SETUP.md` for instructions
+                3. Get free key at: https://aistudio.google.com/app/apikey
+                """)
+
+        if st.session_state.get('ai_ready', False):
+            # Example prompts
+            with st.expander("💡 Example Questions", expanded=False):
+                col1, col2 = st.columns(2)
+                with col1:
+                    st.markdown("""
+                    - "Beach vacation from Sydney under $800"
+                    - "Ski trip from New York in December"
+                    - "Romantic honeymoon, budget $2000"
+                    """)
+                with col2:
+                    st.markdown("""
+                    - "Family trip during summer break"
+                    - "Direct flights to Europe"
+                    - "Cheap flights to Asia next month"
+                    """)
+
+            # Chat history
+            if 'ai_chat' not in st.session_state:
+                st.session_state.ai_chat = []
+                st.session_state.ai_chat.append({
+                    'role': 'assistant',
+                    'content': "👋 Hi! Tell me about your dream trip and I'll search real flights for you!"
+                })
+
+            # Display chat
+            for msg in st.session_state.ai_chat:
+                with st.chat_message(msg['role']):
+                    st.write(msg['content'])
+
+                    # Display flight results if present
+                    if 'results' in msg and msg['results']:
+                        results = msg['results']
+                        st.success(f"✅ Found {results['found']} matching flights!")
+
+                        if results['flights']:
+                            st.markdown("### Top Flight Options:")
+                            for idx, flight in enumerate(results['flights'], 1):
+                                with st.container():
+                                    col1, col2, col3, col4 = st.columns([3, 2, 2, 2])
+
+                                    with col1:
+                                        dest = flight.get('destination', 'Unknown')
+                                        country = flight.get('country', '')
+                                        if country:
+                                            st.markdown(f"### {dest}, {country}")
+                                        else:
+                                            st.markdown(f"### {dest}")
+
+                                    with col2:
+                                        price = flight.get('price', 0)
+                                        st.metric("Price", f"${price}")
+                                        if results.get('total_travelers', 1) > 1:
+                                            total = price * results['total_travelers']
+                                            st.caption(f"Total: ${total:,}")
+
+                                    with col3:
+                                        cabin = flight.get('cabin', 'economy').title()
+                                        st.metric("Class", cabin)
+
+                                    with col4:
+                                        if flight.get('travel_date'):
+                                            st.metric("Travel Date", flight['travel_date'])
+
+                                    st.markdown("---")
+
+            # Chat input
+            user_msg = st.chat_input("What kind of trip are you planning?", key="ai_chat_input")
+
+            if user_msg:
+                # Add user message
+                st.session_state.ai_chat.append({'role': 'user', 'content': user_msg})
+
+                # Get AI response
+                with st.spinner("🔍 Searching flights..."):
+                    response = st.session_state.ai_agent.chat(user_msg)
+
+                # Prepare assistant message
+                assistant_msg = {
+                    'role': 'assistant',
+                    'content': response.get('message', 'Sorry, I encountered an error.')
+                }
+
+                # Attach results if tool was called
+                if response.get('tool_called') and 'function_result' in response:
+                    assistant_msg['results'] = response['function_result']
+
+                st.session_state.ai_chat.append(assistant_msg)
+                st.rerun()
+
+            # Clear button in sidebar
+            if st.button("🔄 New Conversation", key="ai_clear"):
+                st.session_state.ai_chat = []
+                st.session_state.ai_agent.conversation_history = []
+                st.rerun()
+
+    # Tab 3: Deals
+    with tab3:
         st.header("Flight Deals")
         st.markdown("Find the best fares by filtering on your preferences")
 
