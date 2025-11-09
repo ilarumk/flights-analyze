@@ -23,18 +23,24 @@ st.markdown("Chat naturally about your travel plans - I'll help you find the per
 @st.cache_data
 def load_flight_data():
     """Load flight data for agent to search"""
+    # Get the base directory (parent of pages/)
+    base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
     try:
-        with open('flight_prices_worldwide_enriched.json', 'r') as f:
+        data_file = os.path.join(base_dir, 'flight_prices_worldwide_enriched.json')
+        with open(data_file, 'r') as f:
             data = json.load(f)
         df = pd.DataFrame(data['routes'])
         df['travel_date'] = pd.to_datetime(df['travel_date'])
 
         # Load destinations
         try:
-            with open('destinations_with_climate.json', 'r') as f:
+            dest_file = os.path.join(base_dir, 'destinations_with_climate.json')
+            with open(dest_file, 'r') as f:
                 dest_data = json.load(f)
         except:
-            with open('destinations.json', 'r') as f:
+            dest_file = os.path.join(base_dir, 'destinations.json')
+            with open(dest_file, 'r') as f:
                 dest_data = json.load(f)
 
         airport_to_dest = {}
@@ -45,6 +51,7 @@ def load_flight_data():
         return df, airport_to_dest
     except Exception as e:
         st.error(f"Error loading data: {e}")
+        st.error(f"Looking in: {base_dir}")
         return None, None
 
 # Load data
