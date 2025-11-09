@@ -279,6 +279,58 @@ try:
         st.header("🎯 Trip Planner")
         st.markdown("Plan your perfect trip with smart recommendations")
 
+        # Add conversational mode toggle
+        mode = st.radio(
+            "Choose your planning method:",
+            ["💬 Chat with AI Assistant", "📝 Fill Out Form"],
+            horizontal=True,
+            key="planning_mode"
+        )
+
+        if mode == "💬 Chat with AI Assistant":
+            st.markdown("### 🤖 AI Trip Planning Assistant")
+            st.info("💡 Try: 'I want a beach vacation with my family during summer break' or 'Find me cheap flights to Europe in December'")
+
+            # Initialize agent in session state
+            if 'trip_agent' not in st.session_state:
+                try:
+                    from gemini_agent import GeminiTripAgent
+                    st.session_state.trip_agent = GeminiTripAgent()
+                    st.session_state.agent_available = True
+                except Exception as e:
+                    st.session_state.agent_available = False
+                    st.error(f"⚠️ AI Assistant not available: {str(e)}\n\nPlease add GEMINI_API_KEY to .streamlit/secrets.toml (see SECRETS_SETUP.md)")
+
+            if st.session_state.get('agent_available', False):
+                # Chat interface
+                if 'chat_history' not in st.session_state:
+                    st.session_state.chat_history = []
+
+                # Display chat history
+                for msg in st.session_state.chat_history:
+                    with st.chat_message(msg['role']):
+                        st.write(msg['content'])
+
+                # Chat input
+                user_input = st.chat_input("What kind of trip are you planning?")
+
+                if user_input:
+                    # Add user message to history
+                    st.session_state.chat_history.append({'role': 'user', 'content': user_input})
+
+                    # Get agent response
+                    with st.spinner("Thinking..."):
+                        response = st.session_state.trip_agent.chat(user_input)
+
+                    # Add assistant message to history
+                    st.session_state.chat_history.append({'role': 'assistant', 'content': response['message']})
+
+                    # Rerun to show updated chat
+                    st.rerun()
+
+            st.markdown("---")
+            st.markdown("**Or use the form below:**")
+
         # Integrated search interface
         st.subheader("Your Trip Details")
 
