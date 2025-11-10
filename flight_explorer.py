@@ -281,57 +281,8 @@ try:
         st.header("🎯 Trip Planner")
         st.markdown("Plan your perfect trip with smart recommendations")
 
-        # Add conversational mode toggle
-        mode = st.radio(
-            "Choose your planning method:",
-            ["💬 Chat with AI Assistant", "📝 Fill Out Form"],
-            horizontal=True,
-            key="planning_mode"
-        )
-
-        if mode == "💬 Chat with AI Assistant":
-            st.markdown("### 🤖 AI Trip Planning Assistant")
-            st.info("💡 Try: 'I want a beach vacation with my family during summer break' or 'Find me cheap flights to Europe in December'")
-
-            # Initialize agent in session state
-            if 'trip_agent' not in st.session_state:
-                try:
-                    from gemini_agent import GeminiTripAgent
-                    st.session_state.trip_agent = GeminiTripAgent()
-                    st.session_state.agent_available = True
-                except Exception as e:
-                    st.session_state.agent_available = False
-                    st.error(f"⚠️ AI Assistant not available: {str(e)}\n\nPlease add GEMINI_API_KEY to .streamlit/secrets.toml (see SECRETS_SETUP.md)")
-
-            if st.session_state.get('agent_available', False):
-                # Chat interface
-                if 'chat_history' not in st.session_state:
-                    st.session_state.chat_history = []
-
-                # Display chat history
-                for msg in st.session_state.chat_history:
-                    with st.chat_message(msg['role']):
-                        st.write(msg['content'])
-
-                # Chat input
-                user_input = st.chat_input("What kind of trip are you planning?")
-
-                if user_input:
-                    # Add user message to history
-                    st.session_state.chat_history.append({'role': 'user', 'content': user_input})
-
-                    # Get agent response
-                    with st.spinner("Thinking..."):
-                        response = st.session_state.trip_agent.chat(user_input)
-
-                    # Add assistant message to history
-                    st.session_state.chat_history.append({'role': 'assistant', 'content': response['message']})
-
-                    # Rerun to show updated chat
-                    st.rerun()
-
-            st.markdown("---")
-            st.markdown("**Or use the form below:**")
+        # Link to AI Assistant
+        st.info("💡 **Want conversational search?** Try the **🤖 AI Assistant** tab!")
 
         # Integrated search interface
         st.subheader("Your Trip Details")
@@ -1251,46 +1202,62 @@ try:
                     'content': "👋 Hi! Tell me about your dream trip and I'll search real flights for you!"
                 })
 
-            # Display chat
-            for msg in st.session_state.ai_chat:
+            # Display chat (Streamlit best practice: separate container for each message)
+            for idx, msg in enumerate(st.session_state.ai_chat):
                 with st.chat_message(msg['role']):
-                    st.write(msg['content'])
+                    st.markdown(msg['content'])
+
+                    # Show tool execution details if present
+                    if 'tool_info' in msg:
+                        tool = msg['tool_info']
+                        with st.expander("🔧 Tool Execution Details", expanded=False):
+                            st.code(f"""
+Function Called: {tool['function']}
+
+Parameters:
+{json.dumps(tool['params'], indent=2)}
+                            """, language="python")
 
                     # Display flight results if present
                     if 'results' in msg and msg['results']:
                         results = msg['results']
+
+                        # Success message with count
                         st.success(f"✅ Found {results['found']} matching flights!")
 
                         if results['flights']:
-                            st.markdown("### Top Flight Options:")
+                            st.markdown("---")
+                            # Use clean data table for results
                             for idx, flight in enumerate(results['flights'], 1):
-                                with st.container():
-                                    col1, col2, col3, col4 = st.columns([3, 2, 2, 2])
+                                col1, col2, col3 = st.columns([4, 2, 2])
 
-                                    with col1:
-                                        dest = flight.get('destination', 'Unknown')
-                                        country = flight.get('country', '')
-                                        if country:
-                                            st.markdown(f"### {dest}, {country}")
-                                        else:
-                                            st.markdown(f"### {dest}")
+                                with col1:
+                                    dest = flight.get('destination', 'Unknown')
+                                    country = flight.get('country', '')
+                                    if country:
+                                        st.markdown(f"**{idx}. {dest}, {country}**")
+                                    else:
+                                        st.markdown(f"**{idx}. {dest}**")
 
-                                    with col2:
-                                        price = flight.get('price', 0)
-                                        st.metric("Price", f"${price}")
-                                        if results.get('total_travelers', 1) > 1:
-                                            total = price * results['total_travelers']
-                                            st.caption(f"Total: ${total:,}")
+                                    if flight.get('airline'):
+                                        st.caption(f"✈️ {flight['airline']}")
 
-                                    with col3:
-                                        cabin = flight.get('cabin', 'economy').title()
-                                        st.metric("Class", cabin)
+                                with col2:
+                                    price = flight.get('price', 0)
+                                    st.metric("Price/Person", f"${price:,}")
 
-                                    with col4:
-                                        if flight.get('travel_date'):
-                                            st.metric("Travel Date", flight['travel_date'])
+                                with col3:
+                                    cabin = flight.get('cabin', 'economy').title()
+                                    date = flight.get('travel_date', 'TBD')
+                                    st.metric("Class", cabin)
+                                    st.caption(f"📅 {date}")
 
-                                    st.markdown("---")
+                                # Show total for multiple travelers
+                                if results.get('total_travelers', 1) > 1:
+                                    total = price * results['total_travelers']
+                                    st.info(f"👥 Total for {results['total_travelers']} travelers: **${total:,}**")
+
+                                st.markdown("---")
 
             # Chat input
             user_msg = st.chat_input("What kind of trip are you planning?", key="ai_chat_input")
@@ -1300,7 +1267,7 @@ try:
                 st.session_state.ai_chat.append({'role': 'user', 'content': user_msg})
 
                 # Get AI response
-                with st.spinner("🔍 Searching flights..."):
+                with st.spinner("🤖 Processing... 🔍 Searching flights..."):
                     response = st.session_state.ai_agent.chat(user_msg)
 
                 # Prepare assistant message
@@ -1309,9 +1276,16 @@ try:
                     'content': response.get('message', 'Sorry, I encountered an error.')
                 }
 
-                # Attach results if tool was called
-                if response.get('tool_called') and 'function_result' in response:
-                    assistant_msg['results'] = response['function_result']
+                # Attach tool execution info if tool was called
+                if response.get('tool_called'):
+                    assistant_msg['tool_info'] = {
+                        'function': response.get('function_name', 'search_flights'),
+                        'params': response.get('function_args', {})
+                    }
+
+                    # Attach results if available
+                    if 'function_result' in response:
+                        assistant_msg['results'] = response['function_result']
 
                 st.session_state.ai_chat.append(assistant_msg)
                 st.rerun()
